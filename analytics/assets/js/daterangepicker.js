@@ -99,7 +99,7 @@
 
         //html template for the picker UI
         if (typeof options.template !== 'string' && !(options.template instanceof $))
-            options.template = '<div class="daterangepicker dropdown-menu">' +
+            options.template = '<div class="daterangepicker ">' +
                 '<div class="calendar left">' +
                     '<div class="daterangepicker_input">' +
                       '<input class="input-mini" type="text" name="daterangepicker_start" value="" />' +
@@ -328,8 +328,7 @@
                 //Support unicode chars in the range names.
                 var elem = document.createElement('textarea');
                 elem.innerHTML = range;
-                var rangeHtml = elem.value;
-
+                var rangeHtml = elem.value;                
                 this.ranges[rangeHtml] = [start, end];
             }
 
@@ -341,6 +340,7 @@
             list += '</ul>';
             this.container.find('.ranges').prepend(list);
         }
+        this.container.find('.ranges').hide();
 
         if (typeof cb === 'function') {
             this.callback = cb;
@@ -374,7 +374,7 @@
         }
 
         if ((typeof options.ranges === 'undefined' && !this.singleDatePicker) || this.alwaysShowCalendars) {
-            this.container.addClass('show-calendar');
+            //this.container.addClass('show-calendar');
         }
 
         this.container.addClass('opens' + this.opens);
@@ -1082,6 +1082,7 @@
             this.move();
             this.element.trigger('show.daterangepicker', this);
             this.isShowing = true;
+            this.container.find('.ranges').show();
         },
 
         hide: function(e) {
@@ -1126,7 +1127,7 @@
                 target.closest(this.container).length ||
                 target.closest('.calendar-table').length
                 ) return;
-            this.hide();
+            this.hide();                        
         },
 
         showCalendars: function() {
