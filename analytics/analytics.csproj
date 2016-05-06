@@ -123,13 +123,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ActivityController.cs" />
     <Compile Include="Controllers\ReporteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DAO\ActivityDAO.cs" />
     <Compile Include="Models\DAO\DAO.cs" />
     <Compile Include="Models\DAO\Mapping\TiempoMap.cs" />
     <Compile Include="Models\DAO\NhibernateHelper.cs" />
+    <Compile Include="Models\DTO\StringNumberTable.cs" />
     <Compile Include="Models\DTO\Tiempo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -143,6 +146,7 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="assets\js\jquery-1.10.2.min.map" />
+    <Content Include="Views\Reporte\Activity.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

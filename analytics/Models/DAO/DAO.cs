@@ -272,7 +272,7 @@ namespace analytics.Models.DAO
             {
                 using (ISession session = NHibernateHelper.GetCurrentSession())
                 {
-                    IQuery iquery = session.CreateQuery(query);
+                    IQuery iquery = session.CreateSQLQuery(query);
                     foreach (KeyValuePair<string, object> param in parameters)
                         iquery.SetParameter(param.Key, param.Value);
                     return (U)iquery.UniqueResult();
