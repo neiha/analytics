@@ -1526,7 +1526,7 @@
             this.element.removeData();
         }
 
-    };
+    }; 
 
     $.fn.daterangepicker = function(options, callback) {
         this.each(function() {
