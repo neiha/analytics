@@ -107,29 +107,41 @@
   <ItemGroup>
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\daterangepicker.css" />
     <Content Include="assets\css\Site.css" />
     <Content Include="assets\css\styles.min.css" />
     <Content Include="assets\css\vendors.min.css" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\js\app.min.js" />
     <Content Include="assets\js\bootstrap.js" />
     <Content Include="assets\js\bootstrap.min.js" />
     <None Include="assets\js\jquery-1.10.2.intellisense.js" />
+    <Content Include="assets\js\charts.js" />
+    <Content Include="assets\js\daterangepicker.js" />
     <Content Include="assets\js\jquery-1.10.2.js" />
     <Content Include="assets\js\jquery-1.10.2.min.js" />
     <Content Include="assets\js\modernizr-2.6.2.js" />
+    <Content Include="assets\js\moment.min.js" />
+    <Content Include="assets\js\Reporte\Activity.js" />
+    <Content Include="assets\js\Reporte\Index.js" />
     <Content Include="assets\js\vendors.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ActivityController.cs" />
     <Compile Include="Controllers\ReporteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DAO\ActivityDAO.cs" />
     <Compile Include="Models\DAO\DAO.cs" />
     <Compile Include="Models\DAO\Mapping\TiempoMap.cs" />
     <Compile Include="Models\DAO\NhibernateHelper.cs" />
+    <Compile Include="Models\DTO\ActivityReportResume.cs" />
+    <Compile Include="Models\DTO\OperationResult.cs" />
+    <Compile Include="Models\DTO\StringNumberTable.cs" />
     <Compile Include="Models\DTO\Tiempo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -143,6 +155,8 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="assets\js\jquery-1.10.2.min.map" />
+    <Content Include="Views\Reporte\Activity.cshtml" />
+    <Content Include="Views\Reporte\Campaign.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -152,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Activity\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

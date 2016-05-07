@@ -1,16 +1,25 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<script src="~/assets/js/Reporte/Index.js"></script>
+﻿<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="~/assets/js/Reporte/activity.js"></script>
+<style>
+    .resumenReporteData{
+        font-size:2em;
+        font-weight:bold;
+    }
+</style>
 <link rel="stylesheet" type="text/css" href="~/assets/css/daterangepicker.css" />
-
-<section class="charts">
-    <div class="row todo-app">
-        <div class="btn-group filters" role="group">
-            <button class="btn btn-default filter active">Activity</button>
-            <button class="btn btn-default filter">Demographics</button>
-            <button class="btn btn-default filter">Technology</button>
-            @Html.ActionLink("Campaigns", "Campaign", null, new { @class = "btn btn-default filter" })
+<section class="todo-app">
+    <div class="row">
+        <div class="col-md-12 filters">
+            <div class="btn-group" role="group">
+                <button class="btn btn-default filter active">Actividad</button>
+                <button class="btn btn-default filter">Datos Demográficos</button>
+                <button class="btn btn-default filter">Tecnología</button>
+                <button class="btn btn-default filter">Campañas</button>
+            </div>
         </div>
     </div>
+</section>
+<section class="charts">
     <div class="row">
         <div class="col-sm-12 col-md-10 col-md-offset-1">
             <div class="card area-chart">
@@ -36,7 +45,10 @@
                             <option>Grafica de pie</option>
                             <option>Grafica de barras</option>
                         </select>
-                        <input type="text" id="demo" class="form-control  inline" style="cursor: pointer; width:300px; margin-left:140px;font-size:0.9em;" />
+                        <div class="inline" style="margin-left:30px;font-size:0.9em;">
+                            <input type="text" id="demo" class="form-control inline" style="cursor: pointer;width:300px;  " />
+                        </div>
+
                     </div>
                     <div id="area-chart" class=""></div>
                 </div>
@@ -48,8 +60,7 @@
             <div class="card z-depth-2">
                 <div class="card-content">
                     Usuarios totales <br />
-                    <span style="font-size:2em;font-weight:bold">43.3K</span>
-
+                    <span class="resumenReporteData userCount">0</span>
                 </div>
             </div>
         </div>
@@ -57,7 +68,7 @@
             <div class="card z-depth-2">
                 <div class="card-content">
                     Usuarios activos<br />
-                    <span style="font-size:2em;font-weight:bold">43.3K</span>
+                    <span class="resumenReporteData activeUsersCount">0</span>
                 </div>
             </div>
         </div>
@@ -65,7 +76,7 @@
             <div class="card z-depth-2">
                 <div class="card-content">
                     Nuevos usuarios<br />
-                    <span style="font-size:2em;font-weight:bold">22.3K</span>
+                    <span class="resumenReporteData newUsersCount">0</span>
                 </div>
             </div>
         </div>
@@ -73,7 +84,7 @@
             <div class="card z-depth-2">
                 <div class="card-content">
                     Usuarios rebote<br />
-                    <span style="font-size:2em;font-weight:bold">12K</span>
+                    <span class="resumenReporteData returningUsersCount">0</span>
                 </div>
             </div>
         </div>
@@ -81,7 +92,7 @@
             <div class="card z-depth-2">
                 <div class="card-content">
                     Sesiones<br />
-                    <span style="font-size:2em;font-weight:bold">10K</span>
+                    <span class="resumenReporteData sessionCount">0</span>
                 </div>
             </div>
         </div>
@@ -89,16 +100,17 @@
             <div class="card z-depth-2">
                 <div class="card-content">
                     Sesiones/usuario<br />
-                    <span style="font-size:2em;font-weight:bold">12</span>
+                    <span class="resumenReporteData userSessionRate">0</span>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
     <div class="card">
         <div>
             <div class="datatables">
-                <table id="example" class="table table-full table-full-small" cellspacing="0" width="100%">
+                <table id="tblexample" class="table table-full table-full-small" cellspacing="0" width="100%">
                     <thead>
                         <tr>
                             <th>Dia</th>
@@ -583,4 +595,3 @@
     </div>
 
 
-</section>

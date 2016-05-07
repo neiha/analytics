@@ -20,8 +20,8 @@ namespace analytics.Models.DAO
             // FluentNHibernate Configuration API for configuring NHibernate
             config = Fluently.Configure(config)
                 .Database(
-                        MySQLConfiguration.Standard
-                            .ConnectionString("Server = 127.0.0.1; Database = menudehoy; Uid = root; Pwd =;")
+                        MsSqlConfiguration.MsSql2012
+                            .ConnectionString("Server=DESKTOP-E6AUF6I; Database =analytics; Uid = sa; Pwd =hola;")
                             .UseReflectionOptimizer()
                             .AdoNetBatchSize(100))
                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<TiempoMap>())

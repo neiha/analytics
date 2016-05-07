@@ -1,4 +1,19 @@
 ﻿$(document).ready(function () {
+    $.ajax({
+        type: "POST",
+        url: "GetResumenActivity",
+        success: function (result) {
+            console
+            if (!result.IsSuccess)
+                return;
+            $(".resumenReporteData.userCount").html(result.Data.UserCount);
+            $(".resumenReporteData.activeUsersCount").html(result.Data.ActiveUsersCount);
+            $(".resumenReporteData.newUsersCount").html(result.Data.NewUsersCount);
+            $(".resumenReporteData.returningUsersCount").html(result.Data.ReturningUsersCount);
+            $(".resumenReporteData.sessionCount").html(result.Data.SessionCount);
+            $(".resumenReporteData.userSessionRate").html(result.Data.UserSessionRate);
+        }
+    });
     $('#demo').daterangepicker({
         "ranges": {
             "Hoy": [
@@ -58,5 +73,15 @@
         "endDate": moment().subtract(7, 'days')
     }, function (start, end, label) {
         console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
-    });    
+    });
+    $('#tblexample')
+   .addClass('nowrap')
+   .dataTable({
+       responsive: true,
+       columnDefs: [
+         { targets: [-1, -3], className: 'dt-body-right' }
+       ]
+   });
+
 });
+

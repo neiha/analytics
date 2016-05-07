@@ -44,18 +44,32 @@ interval = setInterval(function () {
 
 
 var chart = c3.generate({
-    bindto: '#line-chart',
+    bindto: '#area-chart',
     data: {
+        x:'x',
         columns: [
-          ['data1', 30, 200, 100, 400, 150, 250],
-          ['data2', 50, 20, 10, 40, 15, 25]
+          ['x', '2016-05-01' , '2016-05-02', '2016-05-03', '2016-05-04', '2016-05-05', '2016-05-06'], 
+          ['Usuarios activos', 30, 200, 100, 400, 150, 250],
+          ['Usuarios inactivos', 50, 20, 10, 40, 15, 25]
         ]
     },
-    color: { pattern: colors }
+    color: { pattern: colors },
+    axis: {
+        x: {
+            label: 'Fechas',
+            type: 'timeseries',
+            tick: {
+                format: '%d- %m'
+            }
+        },
+        y: {
+            label: 'Usuarios'
+        }
+    }
 });
 
 
-c3.generate({
+/*c3.generate({
     bindto: '#area-chart',
     data: {
         columns: [
@@ -68,7 +82,7 @@ c3.generate({
         }
     },
     color: { pattern: colors }
-});
+});*/
 
 c3.generate({
     bindto: '#bar-chart',
@@ -165,4 +179,16 @@ c3.generate({
         title: "Iris Petal Width"
     },
     color: { pattern: colors }
+});
+$(function () {
+
+    $('#exampletbl')
+      .addClass('nowrap')
+      .dataTable({
+          responsive: true,
+          columnDefs: [
+            { targets: [-1, -3], className: 'dt-body-right' }
+          ]
+      });
+
 });
