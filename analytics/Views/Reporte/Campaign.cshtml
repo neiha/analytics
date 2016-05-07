@@ -1,4 +1,5 @@
-﻿<section class="charts">
+﻿<script src="~/assets/js/Reporte/SelectChart.js"></script>
+<section class="charts">
     <div class="row todo-app">
         <div class="btn-group filters" role="group" aria-label="Filter todo's">
             @Html.ActionLink("Activity", "Index", null, new { @class = "btn btn-default filter" })
@@ -29,12 +30,14 @@
                             <option>Una Experiencia</option>
                         </select>
                         <label style="padding-left:15px;margin-right:7px;">Tipo de Gráfica</label>
-                        <select class="form-control inline" style="width:150px;font-size:0.9em;">
+                        <select id="selectChart" class="form-control inline" style="width:150px;font-size:0.9em;">
                             <option>Area</option>
                             <option>Barras</option>
                         </select>
                     </div>
-                    <div id="area-chart" class=""></div>
+                    <div id="content_chart">
+                        @*<div id="area-chart" class=""></div>*@
+                    </div>                    
                 </div>
             </div>
         </div>
