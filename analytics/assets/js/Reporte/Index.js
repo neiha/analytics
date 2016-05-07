@@ -17,7 +17,7 @@
                 moment().subtract(89, 'days'), moment()
             ],
             "Últimos 365 días": [
-                moment().subtract(200, 'days'), moment()
+                moment().subtract(364, 'days'), moment()
             ]
         },
         "locale": {

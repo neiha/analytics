@@ -1,0 +1,206 @@
+﻿<script src="~/assets/js/Reporte/SelectChart.js"></script>
+<section class="charts">
+    <div class="row todo-app">
+        <div class="btn-group filters" role="group" aria-label="Filter todo's">
+            @Html.ActionLink("Activity", "Index", null, new { @class = "btn btn-default filter" })
+            <button class="btn btn-default filter">Demographics</button>
+            <button class="btn btn-default filter">Technology</button>
+            <button class="btn btn-default filter active">Campaigns</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <div class="card area-chart">
+                <div class="card-content">
+                    <div class="form-group">
+                        <select class="form-control inline" style="width:150px;font-size:0.9em;">
+                            <option>Usuarios</option>
+                            <option>Sesiones</option>
+                        </select>
+                        <label style="padding-left:15px;margin-right:7px;">por</label>
+                        <select class="form-control inline" style="width:150px;font-size:0.9em;">
+                            <option>Dia</option>
+                            <option>Mes</option>
+                            <option>Hora</option>
+                            <option>Dia de la semana</option>
+                        </select>
+                        <label style="padding-left:15px;margin-right:7px;">y</label>
+                        <select class="form-control inline" style="width:150px;font-size:0.9em;">
+                            <option>Todas las Experiencias</option>
+                            <option>Una Experiencia</option>
+                        </select>
+                        <label style="padding-left:15px;margin-right:7px;">Tipo de Gráfica</label>
+                        <select id="selectChart" class="form-control inline" style="width:150px;font-size:0.9em;">
+                            <option>Area</option>
+                            <option>Barras</option>
+                        </select>
+                    </div>
+                    <div id="content_chart">
+                        @*<div id="area-chart" class=""></div>*@
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-lg-2 ">
+            <div class="card z-depth-2">
+                <div class="card-content">
+                    Usuarios totales <br />
+                    <span style="font-size:2em;font-weight:bold">43.3K</span>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2">
+            <div class="card z-depth-2">
+                <div class="card-content">
+                    Usuarios activos<br />
+                    <span style="font-size:2em;font-weight:bold">43.3K</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2">
+            <div class="card z-depth-2">
+                <div class="card-content">
+                    Nuevos usuarios<br />
+                    <span style="font-size:2em;font-weight:bold">22.3K</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2">
+            <div class="card z-depth-2">
+                <div class="card-content">
+                    Usuarios rebote<br />
+                    <span style="font-size:2em;font-weight:bold">12K</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2">
+            <div class="card z-depth-2">
+                <div class="card-content">
+                    Sesiones<br />
+                    <span style="font-size:2em;font-weight:bold">10K</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2">
+            <div class="card z-depth-2">
+                <div class="card-content">
+                    Sesiones/usuario<br />
+                    <span style="font-size:2em;font-weight:bold">12</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-lg-4">
+            <h4>Top Ciudades</h4>
+            <div class="datatables">
+                <table id="example" class="table table-full table-full-small" cellspacing="0" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>1.</td>
+                            <td>México</td>
+                            <td>5,324</td>
+                            <td>39%</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td>Brasil</td>
+                            <td>3,465</td>
+                            <td>22%</td>
+                            <td></td>                           
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td>Alemania</td>
+                            <td>924</td>
+                            <td>16.5%</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4.</td>
+                            <td>Inglaterra</td>
+                            <td>894</td>
+                            <td>13.5%</td>
+                            <td></td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+            <h4>Top Lenguajes</h4>
+            <div class="datatables">
+                <table id="example" class="table table-full table-full-small" cellspacing="0" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>1.</td>
+                            <td>Español</td>
+                            <td>10,434</td>
+                            <td>55%</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td>Inglés</td>
+                            <td>9,542</td>
+                            <td>30%</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td>Alemán</td>
+                            <td>980</td>
+                            <td>10.5%</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4.</td>
+                            <td>Francés</td>
+                            <td>894</td>
+                            <td>8%</td>
+                            <td></td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+            <h4>Top Dispositivos</h4>
+            <div class="datatables">
+                <table id="example" class="table table-full table-full-small" cellspacing="0" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>1.</td>
+                            <td>iPhone</td>
+                            <td>11,434</td>
+                            <td>63%</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td>Samsung</td>
+                            <td>4,600</td>
+                            <td>22%</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td>LGE</td>
+                            <td>980</td>
+                            <td>4.5%</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4.</td>
+                            <td>Sony</td>
+                            <td>894</td>
+                            <td>3%</td>
+                            <td></td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
