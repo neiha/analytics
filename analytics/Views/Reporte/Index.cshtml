@@ -15,28 +15,29 @@
         <div class="col-sm-12 col-md-10 col-md-offset-1">
             <div class="card area-chart">
                 <div class="card-content">
-                    <div class="form-group">
+                    <div class="form-group">                        
                         <select class="form-control inline" style="width:150px;font-size:0.9em;">
                             <option>Usuarios nuevos</option>
                             <option>Usuarios activos</option>
                             <option>Sesiones</option>
                             <option>Usuarios que regresan</option>
                         </select>
-                        <label style="padding-left:15px;margin-right:7px;">por:</label>
+                        <label style="padding-left:15px;margin-right:7px;">Por:</label>
                         <select class="form-control inline" style="width:150px;font-size:0.9em;">
                             <option>Dia</option>
                             <option>Mes</option>
                             <option>Hora</option>
                             <option>Dia de la semana</option>
                         </select>
-                        <label style="padding-left:15px;margin-right:7px;">en:</label>
+                        <label style="padding-left:15px;margin-right:7px;">Rango:</label>
+                        <input type="text" id="demo" class="form-control  inline" style="cursor: pointer; width:150px; font-size:0.9em;" />
+                        <label style="padding-left:15px;margin-right:7px;">Gráfica:</label>
                         <select class="form-control inline" style="width:150px;font-size:0.9em;">
                             <option>Grafica de lineas</option>
                             <option>Grafica de area</option>
                             <option>Grafica de pie</option>
                             <option>Grafica de barras</option>
-                        </select>
-                        <input type="text" id="demo" class="form-control  inline" style="cursor: pointer; width:300px; margin-left:140px;font-size:0.9em;" />
+                        </select>                        
                     </div>
                     <div id="area-chart" class=""></div>
                 </div>
