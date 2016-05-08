@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    alert("hola");
     $('#demo').daterangepicker({
         "ranges": {
             "Hoy": [
