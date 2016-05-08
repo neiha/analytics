@@ -1,8 +1,11 @@
-﻿namespace analytics.Models.DTO
+﻿using System;
+
+namespace analytics.Models.DTO
 {
     public class StringNumberTable
     {
-        public virtual string Key { get; set; }
-        public virtual string Number { get; set; }
+        public virtual string StringKey { get; set; }
+        public virtual DateTime DateKey { get; set; }
+        public virtual int Number { get; set; }
     }
 }

@@ -25,30 +25,28 @@
             <div class="card area-chart">
                 <div class="card-content">
                     <div class="form-group">
-                        <select class="form-control inline" style="width:150px;font-size:0.9em;">
-                            <option>Usuarios nuevos</option>
-                            <option>Usuarios activos</option>
-                            <option>Sesiones</option>
-                            <option>Usuarios que regresan</option>
+                        <select id="TipoReporte" class="form-control inline reportFilter" style="width:150px;font-size:0.9em;">
+                            <option value="UsuariosNuevos">Usuarios nuevos</option>
+                            <option value="UsuariosActivos">Usuarios activos</option>
+                            <option value="Sesiones">Sesiones</option>
+                            <option value="Reinstalaciones">Usuarios que han regresado</option>
                         </select>
-                        <label style="padding-left:15px;margin-right:7px;">por:</label>
-                        <select class="form-control inline" style="width:150px;font-size:0.9em;">
-                            <option>Dia</option>
-                            <option>Mes</option>
-                            <option>Hora</option>
-                            <option>Dia de la semana</option>
+                        <label style="padding-left:15px;margin-right:7px;">Por:</label>
+                        <select id="FiltroReporte" class="form-control inline reportFilter" style="width:150px;font-size:0.9em;">
+                            <option value="Dia">Día</option>
+                            <option value="Mes">Mes</option>
+                            <option value="Hora">Hora</option>
+                            <option value="DiaSemana">Día de la semana</option>
+                            <option value="DiaSemanaHora">Hora/Día de la semana</option>
                         </select>
-                        <label style="padding-left:15px;margin-right:7px;">en:</label>
-                        <select class="form-control inline" style="width:150px;font-size:0.9em;">
-                            <option>Grafica de lineas</option>
-                            <option>Grafica de area</option>
-                            <option>Grafica de pie</option>
-                            <option>Grafica de barras</option>
+                        <label style="padding-left:15px;margin-right:7px;">Rango:</label>
+                        <input type="text" id="demo" class="form-control  inline reportFilter" style="cursor: pointer; width:150px; font-size:0.9em;" />
+                        <label style="padding-left:15px;margin-right:7px;">Gráfica:</label>
+                        <select id="TipoGraficaReporte" class="form-control inline" style="width:150px;font-size:0.9em;">
+                            <option value="line">Líneas</option>
+                            <option value="area">Área</option>
+                            <option value="bar">Barras</option>
                         </select>
-                        <div class="inline" style="margin-left:30px;font-size:0.9em;">
-                            <input type="text" id="demo" class="form-control inline" style="cursor: pointer;width:300px;  " />
-                        </div>
-
                     </div>
                     <div id="area-chart" class=""></div>
                 </div>
